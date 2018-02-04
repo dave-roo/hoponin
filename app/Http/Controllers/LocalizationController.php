@@ -9,10 +9,6 @@ class LocalizationController extends Controller {
 	  
       app()->setLocale('en');
 	  
-	  //guest, check cookie, session cookie
-	  //if user, check database language and write to session
-	  
-	  
 	  return view('demo');
    }
    
