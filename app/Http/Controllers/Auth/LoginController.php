@@ -27,6 +27,11 @@ class LoginController extends Controller
      */
     protected $redirectTo = '/hoponin';
 
+	protected function performLogout()
+	{ 
+		auth()->logout();
+		return redirect('/hoponin'); 
+	}
     /**
      * Create a new controller instance.
      *

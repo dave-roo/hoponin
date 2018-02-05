@@ -3,40 +3,30 @@
         <a href="#" class="navbar-brand">Hop On In</a>
 		
 		@if (Route::has('login'))
-			
+			@auth
 			<div class="top-right">
-				@auth
-				<ul class="nav navbar-nav navbar-right">
-					<li class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
-							{{ Auth::user()->name }} <span class="caret"></span>
-						</a>
-
-						<ul class="dropdown-menu">
-							<li>
-								<a href="{{ route('logout') }}"
-									onclick="event.preventDefault();
-											 document.getElementById('logout-form').submit();">
-									Logout
-								</a>
-
-								<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-									{{ csrf_field() }}
-								</form>
-							</li>
-						</ul>
-					</li>
-				</ul>
+				<div class="btn-group">
+					<button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					{{ Auth::user()->name }}
+					</button>
+					<div class="dropdown-menu">
+					<a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+					</div>
+					<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+						{{ csrf_field() }}
+					</form>
+				</div>
 				@else
+				<div class="btn-group">
+					<button class="btn btn-secondary" data-toggle="modal" data-target="#Register">Offer a Ride</button>
 					<button class="btn btn-secondary" data-toggle="modal" data-target="#Register">Register</button>
 					<button class="btn btn-primary" data-toggle="modal" data-target="#Login">@lang('messages.login')</button>
 				@endauth
+				</div>
+				@endif
 			</div>
-		@endif
-		
-      </div>
+		</div>
     </div>
-	
 </head>
 <body>
 
