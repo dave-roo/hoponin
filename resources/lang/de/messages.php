@@ -1,6 +1,7 @@
 <?php
    return [
       'welcome' => 'Wilkommen',
-      'login' => 'Einloggen'
+      'login' => 'Einloggen',
+	  'targetdrivinglocation' => 'Wo fährst du los?'
    ];
 ?>

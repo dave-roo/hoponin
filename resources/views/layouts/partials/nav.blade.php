@@ -6,6 +6,7 @@
 			@auth
 			<div class="top-right">
 				<div class="btn-group">
+					<button class="btn btn-secondary" data-toggle="modal" data-target="#OfferRide">Offer a Ride</button>
 					<button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 					{{ Auth::user()->name }}
 					</button>
@@ -56,6 +57,23 @@
         </div>
         <div class="modal-body">
 			@include('auth.register')
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div> 
+    </div>
+  </div>
+  
+    <div class="modal fade" id="OfferRide" role="dialog">
+    <div class="modal-dialog">	
+      <div class="modal-content">
+        <div class="modal-header">
+		  <div class="panel-heading">Offer a ride</div>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+			@include('auth.offerride')
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

@@ -1,6 +1,7 @@
 <?php
    return [
       'welcome' => 'Welcome',
-      'login' => 'Login'
+      'login' => 'Login',
+	  'targetdrivinglocation' => 'Where are you driving from?'
    ];
 ?>
