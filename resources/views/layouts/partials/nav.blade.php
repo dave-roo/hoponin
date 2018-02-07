@@ -6,22 +6,38 @@
 			@auth
 			<div class="top-right">
 				<div class="btn-group">
-					<button class="btn btn-secondary" data-toggle="modal" data-target="#OfferRide">Offer a Ride</button>
+					@if(Request::is('*/registeroffer')==false && App::getLocale()=='en')
+						<a href="/hoponin/en/registeroffer" class="btn btn-secondary">Offer a Ride (En)</a>
+					@elseif(Request::is('*/registeroffer')==false && App::getLocale()=='fr')
+						<a href="/hoponin/fr/registeroffer" class="btn btn-secondary">Offer a Ride (Fr)</a>
+					@elseif(Request::is('*/registeroffer')==false && App::getLocale()=='de')
+						<a href="/hoponin/de/registeroffer" class="btn btn-secondary">Offer a Ride (De)</a>
+					@endif
+
+					<div class="btn-group" role="group">
 					<button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-					{{ Auth::user()->name }}
+						{{ Auth::user()->name }}
 					</button>
-					<div class="dropdown-menu">
-					<a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+					<ul class="dropdown-menu">
+						<li><a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
+					</ul>
 					</div>
+					
 					<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
 						{{ csrf_field() }}
 					</form>
 				</div>
 				@else
 				<div class="btn-group">
-					<button class="btn btn-secondary" data-toggle="modal" data-target="#Register">Offer a Ride</button>
-					<button class="btn btn-secondary" data-toggle="modal" data-target="#Register">Register</button>
-					<button class="btn btn-primary" data-toggle="modal" data-target="#Login">@lang('messages.login')</button>
+					@if(Request::is('*/registeroffer')==false && App::getLocale()=='en')
+						<a class="btn btn-secondary" href="/hoponin/en/registeroffer">Offer a Ride (En)</a>
+					@elseif(Request::is('*/registeroffer')==false && App::getLocale()=='fr')
+						<a href="#" class="btn btn-secondary" href="/hoponin/fr/registeroffer">Offer a Ride (Fr)</a>
+					@elseif(Request::is('*/registeroffer')==false && App::getLocale()=='de')
+						<a href="#" class="btn btn-secondary" href="/hoponin/de/registeroffer">Offer a Ride (De)</a>
+					@endif
+					<a href="#" class="btn btn-secondary" data-toggle="modal" data-target="#Register">Register</a>
+					<a href="#" class="btn btn-secondary" data-toggle="modal" data-target="#Login">@lang('messages.login')</a>
 				@endauth
 				</div>
 				@endif
@@ -57,23 +73,6 @@
         </div>
         <div class="modal-body">
 			@include('auth.register')
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
-      </div> 
-    </div>
-  </div>
-  
-    <div class="modal fade" id="OfferRide" role="dialog">
-    <div class="modal-dialog">	
-      <div class="modal-content">
-        <div class="modal-header">
-		  <div class="panel-heading">Offer a ride</div>
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-        </div>
-        <div class="modal-body">
-			@include('auth.offerride')
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
