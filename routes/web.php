@@ -22,6 +22,6 @@ Route::get('/hoponin','LocalizationController@index');
 
 Route::get('/hoponin/{locale}','LocalizationController@langSelected');
 
-Route::get('/hoponin/{locale}/registeroffer','HomeController@registeranoffer');
+Route::get('/hoponin/registeroffer/{locale}','BrainController@registeranoffer');
 
 Auth::routes();

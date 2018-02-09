@@ -18,4 +18,7 @@ class LocalizationController extends Controller {
 
 	  return view('demo');
    }
+   
+   
+   
 }
