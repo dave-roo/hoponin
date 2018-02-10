@@ -1,6 +1,12 @@
 	<div class="navbar navbar-inverse bg-inverse">
       <div class="container d-flex justify-content-between">
-        <a href="#" class="navbar-brand">Hop On In</a>
+		@if(App::getLocale()=='en')
+			<a href="/hoponin/en" class="navbar-brand">Hop On In</a>
+		@elseif(App::getLocale()=='fr')
+			<a href="/hoponin/fr" class="navbar-brand">Hop On In<</a>
+		@elseif(App::getLocale()=='de')
+			<a href="/hoponin/de" class="navbar-brand">Hop On In</a>
+		@endif
 		
 		@if (Route::has('login'))
 			@auth
@@ -29,16 +35,18 @@
 				</div>
 				@else
 				<div class="btn-group">
-					@if(Request::is('*/en/*')==false && App::getLocale()=='en')
+				@if(Request::is('*/registeroffer/*')==false && Request::is('*/registeranofferdetails/*')==false)
+					@if(App::getLocale()=='en')
 						<a class="btn btn-secondary" href="/hoponin/registeroffer/en">Offer a Ride (En)</a>
-					@elseif(Request::is('*/fr/*')==false && App::getLocale()=='fr')
-						<a class="btn btn-secondary" href="/hoponin/registeroffer/fr">Offer a Ride (Fr)</a>
-					@elseif(Request::is('*/de/*')==false && App::getLocale()=='de')
-						<a class="btn btn-secondary" href="/hoponin/registeroffer/de">Offer a Ride (De)</a>
+					@elseif(App::getLocale()=='fr')
+						<a href="#" class="btn btn-secondary" href="/hoponin/registeroffer/fr">Offer a Ride (Fr)</a>
+					@elseif(App::getLocale()=='de')
+						<a href="#" class="btn btn-secondary" href="/hoponin/registeroffer/de">Offer a Ride (De)</a>
 					@endif
-					<a href="#" class="btn btn-secondary" data-toggle="modal" data-target="#Register">Register</a>
-					<a href="#" class="btn btn-secondary" data-toggle="modal" data-target="#Login">@lang('messages.login')</a>
+				@endif
 				@endauth
+						<a href="#" class="btn btn-secondary" data-toggle="modal" data-target="#Register">Register</a>
+						<a href="#" class="btn btn-secondary" data-toggle="modal" data-target="#Login">@lang('messages.login')</a>
 				</div>
 				@endif
 			</div>
