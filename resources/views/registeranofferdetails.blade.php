@@ -24,33 +24,49 @@
                             </div>
                         </div>
 						
-                        <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                            <label for="name" class="col-md-8 control-label">Where are you driving to?</label>
-
+                        <div class="form-group">
+                            <label for="name" class="col-md-8 control-label">Set Price</label>
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
-
-                                @if ($errors->has('name'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('name') }}</strong>
-                                    </span>
-                                @endif
+                                <input id="name" type="text" class="form-control" name="name">
                             </div>
                         </div>
+
+                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                            <label for="email" class="col-md-8 control-label">Number of passengers?</label>
+
+                            <div class="col-md-6">
+								<select class="form-control">
+								  <option>1</option>
+								  <option>2</option>
+								  <option>3</option>
+								  <option>4</option>
+								  <option>5</option>
+								  <option>6</option>
+								  <option>7</option>
+								  <option>8</option>
+								  <option>9</option>
+								  <option>10</option>
+								</select>
+                            </div>
+                        </div>
+					
 						
-						<label for="name" class="col-md-8 control-label">Departure Date & Time</label>
+						<label for="name" class="col-md-8 control-label">Details</label>
 						<div class="col-md-6">
-							<input id="depatureDate" type="text" class="form-control">
-						</div>
-						
-						<label for="name" class="col-md-8 control-label">Arrival Date & Time</label>
-						<div class="col-md-6">
-							<input id="arrivalDate" type="text" class="form-control">
+							<textarea id="depatureDate" type="text" class="form-control"></textarea>
 						</div>
 						</br>
 						
                         <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
+                            <div class="col-md-2">
+								@if(Request::is('registeranofferdetails/en/*')==false && App::getLocale()=='en')
+									<a class="btn btn-secondary" href="/hoponin/registeranofferdetails/en">Back</a>
+								@elseif(Request::is('registeranofferdetails/fr/*')==false && App::getLocale()=='fr')
+									<a class="btn btn-secondary" href="/hoponin/registeranofferdetails/fr">Back</a>
+								@elseif(Request::is('registeranofferdetails/de/*')==false && App::getLocale()=='de')
+									<a class="btn btn-secondary" href="/hoponin/registeranofferdetails/de">Back</a>
+								@endif
+
 								@if(Request::is('registeranofferdetails/en/*')==false && App::getLocale()=='en')
 									<a class="btn btn-primary" href="/hoponin/registeranofferdetails/en">Next</a>
 								@elseif(Request::is('registeranofferdetails/fr/*')==false && App::getLocale()=='fr')

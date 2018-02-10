@@ -12,6 +12,13 @@ class BrainController extends Controller {
 			  
 		return view('registeranoffer');
 	}
-   
+	
+	public function registeranofferdetails($locale)
+	{
+		app()->setLocale($locale);
+			  
+		return view('registeranofferdetails');
+	}
+
    
 }
