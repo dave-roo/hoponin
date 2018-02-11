@@ -9,16 +9,13 @@ class LocalizationController extends Controller {
 	  
       app()->setLocale('en');
 	  
-	  return view('demo');
+	  return view('index');
    }
    
    public function langSelected($locale){
 	  
       app()->setLocale($locale);
 
-	  return view('demo');
+	  return view('index');
    }
-   
-   
-   
 }

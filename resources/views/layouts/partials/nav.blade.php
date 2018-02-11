@@ -3,7 +3,7 @@
 		@if(App::getLocale()=='en')
 			<a href="/hoponin/en" class="navbar-brand">Hop On In</a>
 		@elseif(App::getLocale()=='fr')
-			<a href="/hoponin/fr" class="navbar-brand">Hop On In<</a>
+			<a href="/hoponin/fr" class="navbar-brand">Hop On In</a>
 		@elseif(App::getLocale()=='de')
 			<a href="/hoponin/de" class="navbar-brand">Hop On In</a>
 		@endif
@@ -12,11 +12,11 @@
 			@auth
 			<div class="top-right">
 				<div class="btn-group">
-					@if(Request::is('*/registeroffer')==false && App::getLocale()=='en')
+					@if(Request::is('*/register*')==false && App::getLocale()=='en')
 						<a href="/hoponin/registeroffer/en" class="btn btn-secondary">Offer a Ride (En)</a>
-					@elseif(Request::is('*/registeroffer')==false && App::getLocale()=='fr')
+					@elseif(Request::is('*/register*')==false && App::getLocale()=='fr')
 						<a href="/hoponin/registeroffer/fr" class="btn btn-secondary">Offer a Ride (Fr)</a>
-					@elseif(Request::is('*/registeroffer')==false && App::getLocale()=='de')
+					@elseif(Request::is('*/register*')==false && App::getLocale()=='de')
 						<a href="/hoponin/registeroffer/de" class="btn btn-secondary">Offer a Ride (De)</a>
 					@endif
 
@@ -35,20 +35,20 @@
 				</div>
 				@else
 				<div class="btn-group">
-				@if(Request::is('*/registeroffer/*')==false && Request::is('*/registeranofferdetails/*')==false)
-					@if(App::getLocale()=='en')
-						<a class="btn btn-secondary" href="/hoponin/registeroffer/en">Offer a Ride (En)</a>
-					@elseif(App::getLocale()=='fr')
-						<a href="#" class="btn btn-secondary" href="/hoponin/registeroffer/fr">Offer a Ride (Fr)</a>
-					@elseif(App::getLocale()=='de')
-						<a href="#" class="btn btn-secondary" href="/hoponin/registeroffer/de">Offer a Ride (De)</a>
+					@if(Request::is('*/register*')==false)
+						@if(App::getLocale()=='en')
+							<a class="btn btn-secondary" href="/hoponin/registeroffer/en">Offer a Ride (En)</a>
+						@elseif(App::getLocale()=='fr')
+							<a class="btn btn-secondary" href="/hoponin/registeroffer/fr">Offer a Ride (Fr)</a>
+						@elseif(App::getLocale()=='de')
+							<a class="btn btn-secondary" href="/hoponin/registeroffer/de">Offer a Ride (De)</a>
+						@endif
 					@endif
-				@endif
-				@endauth
 						<a href="#" class="btn btn-secondary" data-toggle="modal" data-target="#Register">Register</a>
 						<a href="#" class="btn btn-secondary" data-toggle="modal" data-target="#Login">@lang('messages.login')</a>
+					@endauth
 				</div>
-				@endif
+		@endif
 			</div>
 		</div>
     </div>

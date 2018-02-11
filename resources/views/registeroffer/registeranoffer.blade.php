@@ -51,11 +51,11 @@
 						
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
-								@if(Request::is('registeranofferdetails/en/*')==false && App::getLocale()=='en')
+								@if(App::getLocale()=='en')
 									<a class="btn btn-primary" href="/hoponin/registeranofferdetails/en">Next</a>
-								@elseif(Request::is('registeranofferdetails/fr/*')==false && App::getLocale()=='fr')
+								@elseif(App::getLocale()=='fr')
 									<a class="btn btn-primary" href="/hoponin/registeranofferdetails/fr">Next</a>
-								@elseif(Request::is('registeranofferdetails/de/*')==false && App::getLocale()=='de')
+								@elseif(App::getLocale()=='de')
 									<a class="btn btn-primary" href="/hoponin/registeranofferdetails/de">Next</a>
 								@endif
                             </div>
