@@ -30,7 +30,7 @@ class LoginController extends Controller
 	protected function performLogout()
 	{ 
 		auth()->logout();
-		return redirect('/hoponin'); 
+		return back(); 
 	}
     /**
      * Create a new controller instance.
