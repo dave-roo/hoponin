@@ -7,7 +7,7 @@
         <div class="col-md-12">
             <div class="panel panel-default">
                 <div class="panel-body">
-                    <form class="form-horizontal" method="POST" action="{{ route('register') }}">
+                    <form class="form-horizontal" method="POST" action="{{ route('/hoponin/registeranofferdetails/') }}">
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
@@ -52,11 +52,11 @@
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
 								@if(App::getLocale()=='en')
-									<a class="btn btn-primary" href="/hoponin/registeranofferdetails/en">Next</a>
+									<a type="submit" class="btn btn-primary">Next</a>
 								@elseif(App::getLocale()=='fr')
-									<a class="btn btn-primary" href="/hoponin/registeranofferdetails/fr">Next</a>
+									<a type="submit" class="btn btn-primary">Next</a>
 								@elseif(App::getLocale()=='de')
-									<a class="btn btn-primary" href="/hoponin/registeranofferdetails/de">Next</a>
+									<a type="submit" class="btn btn-primary">Next</a>
 								@endif
                             </div>
                         </div>
