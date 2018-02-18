@@ -5,11 +5,11 @@
 				<div class="row">
 					<div class="dropdown">
 					  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						@if(Request::is('*/en'))
+						@if(Request::is('*/en') || App::getLocale()=='en')
 							English
-						@elseif(Request::is('*/fr'))
+						@elseif(Request::is('*/fr') || App::getLocale()=='fr')
 							French
-						@elseif(Request::is('*/de'))
+						@elseif(Request::is('*/de') || App::getLocale()=='de')
 							Deutsch
 						@else
 							-
