@@ -7,7 +7,7 @@
 		@elseif(App::getLocale()=='de')
 			<a href="/hoponin/de" class="navbar-brand">Hop On In</a>
 		@else
-			<a href="/hoponin/" class="navbar-brand">Hop On In</a>
+			<a href="/hoponin/" class="navbar-brand">unknown</a>
 		@endif
 		
 		@if (Route::has('login'))

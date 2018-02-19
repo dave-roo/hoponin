@@ -25,7 +25,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    //protected $redirectTo = '/hoponin';
+    protected $redirectTo = '/hoponin';
 
 	protected function performLogout()
 	{ 
