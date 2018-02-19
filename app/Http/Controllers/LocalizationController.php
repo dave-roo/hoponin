@@ -7,7 +7,10 @@ use App\Http\Controllers\Controller;
 class LocalizationController extends Controller {
    public function index(){
 	  
-      app()->setLocale('en');
+	  $locale = 'en';
+      app()->setLocale($locale);
+	  
+      session(['language' => $locale]);
 	  
 	  return view('index');
    }
@@ -15,7 +18,8 @@ class LocalizationController extends Controller {
    public function langSelected($locale){
 	  
       app()->setLocale($locale);
-
+      session(['language' => $locale]);
+	  
 	  return view('index');
    }
 }

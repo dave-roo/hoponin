@@ -15,7 +15,6 @@
 						@else
 						<a href="#" class="btn btn-secondary" data-toggle="modal" data-target="#Register">Register</a>
 						<a href="#" class="btn btn-secondary" data-toggle="modal" data-target="#Login">@lang('messages.login')</a>
-						
 						@endauth
 					@endif
 				

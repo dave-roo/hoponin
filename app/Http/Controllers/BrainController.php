@@ -5,9 +5,11 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 class BrainController extends Controller {
-	
+
 	public function registeranoffer($locale)
 	{
+
+		$locale = session('language');
 		app()->setLocale($locale);
 
 		return view('registeroffer.registeranoffer');
@@ -15,8 +17,10 @@ class BrainController extends Controller {
 	
 	public function registeranofferdetails(Request $request)
 	{
-		app()->getLocale();
-
+		
+		$locale = session('language');
+		app()->setLocale($locale);
+		
 		return view('registeroffer.registeranofferdetails');
 	}
 
