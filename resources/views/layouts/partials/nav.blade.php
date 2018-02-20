@@ -46,8 +46,8 @@
 							<a class="btn btn-secondary" href="/hoponin/registeroffer/de">Offer a Ride (De)</a>
 						@endif
 					@endif
-						<a href="#" class="btn btn-secondary" data-toggle="modal" data-target="#Register">Register</a>
-						<a href="#" class="btn btn-secondary" data-toggle="modal" data-target="#Login">@lang('messages.login')</a>
+						<a href="{{ route('register') }}" class="btn btn-secondary">Register</a>
+						<a href="{{ route('login') }}" class="btn btn-secondary">@lang('messages.login')</a>
 					@endauth
 				</div>
 		@endif
@@ -56,37 +56,3 @@
     </div>
 </head>
 <body>
-
-  <div class="modal fade" id="Login" role="dialog">
-    <div class="modal-dialog">	
-      <div class="modal-content">
-        <div class="modal-header">
-		  <div class="panel-heading">Login</div>
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-        </div>
-        <div class="modal-body">
-			@include('auth.login')
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
-      </div> 
-    </div>
-  </div>
-
-  <div class="modal fade" id="Register" role="dialog">
-    <div class="modal-dialog">	
-      <div class="modal-content">
-        <div class="modal-header">
-		  <div class="panel-heading">Register</div>
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-        </div>
-        <div class="modal-body">
-			@include('auth.register')
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
-      </div> 
-    </div>
-  </div>

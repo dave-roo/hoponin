@@ -28,9 +28,9 @@ class RegisterController extends Controller
      *
      * @var string
      */
-	protected function redirectTo($langSet)
+	protected function redirectTo()
 	{
-		return redirect()->route('./hoponin/{$langSet}');
+		return redirect()->back();
 	}
     /**
      * Create a new controller instance.

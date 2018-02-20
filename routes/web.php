@@ -18,9 +18,7 @@ Route::get('/','LocalizationController@index');
 
 Route::get('/hoponin/','LocalizationController@index');
 
-Route::get('/hoponin/{locale}','LocalizationController@langSelected');
-
-Route::get('/hoponin/registeroffer/{locale}','BrainController@registeranoffer');
+Route::get('/hoponin/registeroffer','BrainController@registeranoffer');
 
 Route::get('/hoponin/registeranofferdetails','BrainController@registeranofferdetails')->name('registeranofferdetails');
 
