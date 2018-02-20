@@ -14,20 +14,16 @@
 //read from session cookie (guest)
 //read from database (user)
 
-Route::get('/','LocalizationController@index');
+Route::get('/hoponin','LocalizationController@index');
 
-Route::get('/hoponin/','LocalizationController@index');
+Route::get('/setlanguage/{locale}','BrainController@setthelingo');
 
-Route::get('/hoponin/registeroffer','BrainController@registeranoffer')->name('registeranoffer');
+Route::get('/hoponin/{locale}','BrainController@setthelingo');
+
+Route::get('/hoponin/registeroffer','BrainController@registeranoffer');
 
 Route::get('/hoponin/registeranofferdetails','BrainController@registeranofferdetails')->name('registeranofferdetails');
 
 Route::post('/hoponin/registeranofferdetails','BrainController@registeranofferdetails')->name('registeranofferdetailspost');
-
-Route::post('/hoponin/en','BrainController@setthelingo')->name('settoEnglish');
-
-Route::post('/hoponin/fr','BrainController@setthelingo')->name('settoFrench');
-
-Route::post('/hoponin/de','BrainController@setthelingo')->name('settoGerman');
 
 Auth::routes();

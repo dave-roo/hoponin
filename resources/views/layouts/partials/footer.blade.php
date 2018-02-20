@@ -16,9 +16,9 @@
 						@endif
 					  </button>
 					  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-						<a class="dropdown-item" href="{{ route('settoEnglish') }}">English</a>
-						<a class="dropdown-item" href="{{ route('settoFrench') }}">French</a>
-						<a class="dropdown-item" href="{{ route('settoGerman') }}">German</a>
+						<a class="dropdown-item" href="/setlanguage/en">English</a>
+						<a class="dropdown-item" href="/setlanguage/fr">French</a>
+						<a class="dropdown-item" href="/setlanguage/de">German</a>
 					  </div>
 					</div>
 				</div>

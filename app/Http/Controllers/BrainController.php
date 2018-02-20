@@ -8,7 +8,6 @@ class BrainController extends Controller {
 
 	public function registeranoffer()
 	{
-
 		$locale = session('language');
 		app()->setLocale($locale);
 
@@ -17,7 +16,6 @@ class BrainController extends Controller {
 	
 	public function registeranofferdetails(Request $request)
 	{
-		
 		$locale = session('language');
 		app()->setLocale($locale);
 		
@@ -28,8 +26,7 @@ class BrainController extends Controller {
 	{
 		app()->setLocale($locale);
 		session(['language' => $locale]);
-
-		return true; 
+		return back();
 	}
 
    
