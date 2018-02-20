@@ -5,20 +5,13 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 class LocalizationController extends Controller {
-   public function index(){
-	  
-	$locale = 'en';
+   public function index(Request $request){
+	
+	$locale = $request->session()->get('language');
+	
 	app()->setLocale($locale);
 	session(['language' => $locale]);
 	  
-	return view('index');
-   }
-   
-   public function langSelected($locale){
-
-	app()->setLocale($locale);
-	session(['language' => $locale]);
-
 	return view('index');
    }
 }

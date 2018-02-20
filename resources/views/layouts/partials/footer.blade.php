@@ -5,20 +5,20 @@
 				<div class="row">
 					<div class="dropdown">
 					  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						@if(Request::is('*/en') || App::getLocale()=='en')
+						@if(App::getLocale()=='en')
 							English
-						@elseif(Request::is('*/fr') || App::getLocale()=='fr')
+						@elseif(App::getLocale()=='fr')
 							French
-						@elseif(Request::is('*/de') || App::getLocale()=='de')
+						@elseif(App::getLocale()=='de')
 							Deutsch
 						@else
 							-
 						@endif
 					  </button>
 					  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-						<a class="dropdown-item" href="./en">English</a>
-						<a class="dropdown-item" href="./fr">French</a>
-						<a class="dropdown-item" href="./de">German</a>
+						<a class="dropdown-item" href="{{ route('settoEnglish') }}">English</a>
+						<a class="dropdown-item" href="{{ route('settoFrench') }}">French</a>
+						<a class="dropdown-item" href="{{ route('settoGerman') }}">German</a>
 					  </div>
 					</div>
 				</div>

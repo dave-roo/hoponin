@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 
 class BrainController extends Controller {
 
-	public function registeranoffer($locale)
+	public function registeranoffer()
 	{
 
 		$locale = session('language');
@@ -22,6 +22,14 @@ class BrainController extends Controller {
 		app()->setLocale($locale);
 		
 		return view('registeroffer.registeranofferdetails');
+	}
+	
+	public function setthelingo($locale)
+	{
+		app()->setLocale($locale);
+		session(['language' => $locale]);
+
+		return true; 
 	}
 
    

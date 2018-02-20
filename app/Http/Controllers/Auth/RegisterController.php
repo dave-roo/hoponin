@@ -28,10 +28,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-	protected function redirectTo()
-	{
-		return redirect()->back();
-	}
+    protected $redirectTo = '/hoponin';
     /**
      * Create a new controller instance.
      *
