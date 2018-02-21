@@ -6,7 +6,7 @@
 			@auth
 			<div class="top-right">
 				<div class="btn-group">
-					<a href="/hoponin/registeroffer" class="btn btn-secondary">Offer a Ride</a>
+					<a href="{{ route('registeranoffer') }}" class="btn btn-secondary">Offer a Ride</a>
 					<div class="btn-group" role="group">
 					<button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 						{{ Auth::user()->name }}

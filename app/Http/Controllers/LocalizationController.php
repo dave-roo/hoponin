@@ -9,6 +9,10 @@ class LocalizationController extends Controller {
 	
 	$locale = $request->session()->get('language');
 	
+	if($locale == null)
+	{
+		$locale = 'en';
+	}
 	app()->setLocale($locale);
 	session(['language' => $locale]);
 	  
