@@ -3,6 +3,16 @@
 @section('content')
 
 <div class="container">
+
+<form action="" method="post">
+@csrf
+<select name="name">
+	<option value="en">English</option>
+	<option value="de">Deutsch</option>
+</select>
+<input type="submit" value="Choose">
+</form>
+
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">

@@ -22,11 +22,9 @@ class BrainController extends Controller {
 		return view('registeroffer.registeranofferdetails');
 	}
 	
-	public function setthelingo($locale)
+	public function setthelingo()
 	{
-		app()->setLocale($locale);
-		session(['language' => $locale]);
-		return back();
+		echo Input::get('locale');
 	}
 
    
