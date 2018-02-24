@@ -5,7 +5,7 @@
 <div class="container">
 
 <form action="" method="post">
-@csrf
+<meta name="csrf-token" content="{{ csrf_token() }}">
 <select name="name">
 	<option value="en">English</option>
 	<option value="de">Deutsch</option>
