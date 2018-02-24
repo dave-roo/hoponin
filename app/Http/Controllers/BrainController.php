@@ -24,7 +24,10 @@ class BrainController extends Controller {
 	
 	public function setthelingo()
 	{
-		echo Input::get('locale');
+		Session:set('locale', Input::get('locale'));
+		
+		return back();
+		
 	}
 
    

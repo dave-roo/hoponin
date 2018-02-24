@@ -4,9 +4,9 @@
 
 <div class="container">
 
-<form action="" method="post">
-<meta name="csrf-token" content="{{ csrf_token() }}">
-<select name="name">
+<form action="{{ route('lingo') }}" method="post">
+	{{ csrf_field() }}
+<select name="language">
 	<option value="en">English</option>
 	<option value="de">Deutsch</option>
 </select>

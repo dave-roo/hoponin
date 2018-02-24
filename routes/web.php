@@ -24,6 +24,6 @@ Route::get('/hoponin/registeranofferdetails','BrainController@registeranofferdet
 
 Route::post('/hoponin/registeranofferdetails','BrainController@registeranofferdetails')->name('registeranofferdetailspost');
 
-Route::post('/language','BrainController@setthelingo');
+Route::post('/language','BrainController@setthelingo')->name('lingo');
 
 Auth::routes();
