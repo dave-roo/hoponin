@@ -22,12 +22,10 @@ class BrainController extends Controller {
 		return view('registeroffer.registeranofferdetails');
 	}
 	
-	public function setthelingo()
+	public function setlang(Request $request, $lang)
 	{
-		Session:set('locale', Input::get('locale'));
-		
-		return back();
-		
+		session(['lang' => $lang]);
+		return Redirect::back();
 	}
 
    
